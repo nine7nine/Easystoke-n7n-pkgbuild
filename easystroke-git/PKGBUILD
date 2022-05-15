@@ -1,0 +1,39 @@
+# Maintainer:  Jordan Johnston <johnstonljordan AT gmail DOT com>
+
+_pkgname="easystroke"
+pkgname="$_pkgname-git"
+pkgver=0.6.0.r22.g37bfa69
+pkgrel=1
+pkgdesc="Gesture-recognition application for X11."
+arch=("i686" "x86_64")
+url="https://github.com/thjaeger/easystroke/wiki"
+license=("custom")
+depends=("gtkmm3" "boost-libs" "libxtst" "dbus-glib" "xorg-server" "cmake")
+makedepends=("boost" "xorgproto" "intltool" "gettext" "xorg-server-devel" "help2man" "git")
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+install="$_pkgname.install"
+source=("git+https://github.com/nine7nine/easystroke.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$_pkgname"
+  git describe --long | sed "s/\([^-]*-g\)/r\1/;s/-/./g"
+}
+
+build() {
+  cd "$_pkgname"
+  
+  cmake .
+  make
+}
+
+package() {
+  cd "$_pkgname"
+  make PREFIX="/usr" DESTDIR="$pkgdir" install
+  install -Dm644 "easystroke.desktop" "$pkgdir/usr/share/applications/easystroke.desktop"
+  install -Dm644 "easystroke.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/easystroke.svg"
+  install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:
