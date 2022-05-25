@@ -4,13 +4,13 @@
 _pkgname="easystroke_n7n"
 pkgname="$_pkgname-git"
 pkgver=0.6.0.r35.g5b52584
-pkgrel=1
+pkgrel=2
 pkgdesc="Gesture-recognition application for X11."
 arch=("i686" "x86_64")
 url="https://github.com/thjaeger/easystroke/wiki"
 license=("custom")
 depends=("gtkmm3" "boost-libs" "libxtst" "dbus-glib" "xorg-server" "cmake")
-makedepends=("boost" "xorgproto" "intltool" "gettext" "xorg-server-devel" "help2man" "git")
+makedepends=("boost" "xorgproto" "intltool" "gettext" "xorg-server-devel" "help2man" "git" "vala")
 provides=("$pkgname" "easystroke" "easystroke-git")
 conflicts=("$pkgname" "easystroke" "easystroke-git")
 install="$_pkgname.install"
