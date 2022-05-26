@@ -1,4 +1,6 @@
-# Easystroke Archlinux Package
+# Easystroke_n7n: Archlinux Package
+
+![My Image](/images/easystroke.png)
 
 My own Archlinux package for Easystroke Gesture Recognition Software.
 
@@ -8,4 +10,4 @@ found in other (newer) forks of the software.
 
 My Easystroke source code repo is found here:
 
-https://github.com/nine7nine/easystroke
+https://github.com/nine7nine/Easystroke-n7n
