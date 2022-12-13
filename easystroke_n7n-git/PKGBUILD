@@ -3,8 +3,8 @@
 
 _pkgname="easystroke_n7n"
 pkgname="$_pkgname-git"
-pkgver=0.6.0.r37.g35ddb7e
-pkgrel=2
+pkgver=0.6.0.r43.g4d2bd1c
+pkgrel=1
 pkgdesc="Gesture-recognition application for X11."
 arch=("i686" "x86_64")
 url="https://github.com/thjaeger/easystroke/wiki"
@@ -24,7 +24,7 @@ pkgver() {
 
 build() {
   cd "easystroke"
-  
+   
   cmake .
   make
 }
